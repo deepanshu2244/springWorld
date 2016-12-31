@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="bean1" name="HelloWorld" class="com.local.spring.bean.HelloWorld">
+	</bean>
+	<bean id="person" class="com.local.spring.bean.Person">
+		<property name="firstName" value="Deepanshu"></property>
+		<property name="lastName" value="Verma"></property>
+	</bean>
+	<bean id="Company" class="com.local.spring.bean.Company">
+		<property name="person" ref="person"></property>
+	</bean>
+
+	<!-- Spring Auto wiring byName -->
+	<bean id="UnitedArabEmirates" class="com.local.spring.bean.UnitedArabEmirates"
+		autowire="byName">
+		<property name="locationid" value="location1"></property>
+		<property name="areaCode" value="areaCode1"></property>
+		<property name="pointName" value="pointName1"></property>
+	</bean>
+
+	<bean id="BusDetails" class="com.local.spring.bean.BusDetails">
+		<property name="agencyName" value="RTA"></property>
+		<property name="busStartTime" value="5AM"></property>
+		<property name="busEndtime" value="11:59PM"></property>
+	</bean>
+
+
+</beans>
